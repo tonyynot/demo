@@ -4,7 +4,20 @@
         <title>Antony Fernandes</title>
     </head>
     <body>
+        <div class="date-time">
+            <p id="current-date"></p>
+            <p id="current-time"></p>
+        </div>
         <h1>Welcome to the Antony Fernandes Page</h1>
         <p>This is a simple demonstration of an HTML page structure.</p>
+        <script>
+            function updateDateTime() {
+                const now = new Date();
+                document.getElementById("current-date").innerText = now.toLocaleDateString();
+                document.getElementById("current-time").innerText = now.toLocaleTimeString();
+            }
+            setInterval(updateDateTime, 1000);
+            updateDateTime();
+        </script>
     </body>
 </html>
